@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NolaCon Scoreboard</title>
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    </style> 
+    <script>
+        setInterval(function() {
+            var img = document.getElementById('score-graph-img');
+            img.src = img.src.split('?')[0] + '?' + new Date().getTime();
+        }, 10000);
+    </script>
+</head>
+<body>
+<div>
+    <h1>NolaCon CTF Scoreboard</h1>
+    <table>
+        <tr>
+            <th>Token</th>
+            <th>Score</th>
+        </tr>
+        {% for token, score in scoreboard.items() %}
+        <tr>
+            <td>{{ token }}</td>
+            <td>{{ score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>List of Targets:</h2>
+    <ul>
+        {% for target in targets %}
+        <li>{{ target['url'] }} - Token: {{ target['token'] }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Token Scores Over Time</h2>
+    <img id="score-graph-img" src="{{ score_graph }}" alt="Score Graph">
+</div>
+</body>
+</html>
