@@ -163,10 +163,6 @@ if __name__ == '__main__':
     targets_thread.daemon = True
     targets_thread.start()
     load_history()
-    for target in targets:
-        thread = Thread(target=update_score_thread, args=[target])
-        thread.daemon = True
-        thread.start()
 
     periodic_save()
 
