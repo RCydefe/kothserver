@@ -1,0 +1,23 @@
+##############################
+#       Server Settings      #
+##############################
+debug: True
+port: 8080
+
+##############################
+#       Score Settings       #
+##############################
+ctf_name: 'NolaCon'
+targets_sleep_timer: 60
+periodic_saves: 60
+token_timer: 10
+score_timer: 10
+points: 10
+
+
+##############################
+#   Configuration Settings   #
+##############################
+scores_file: './scores.json'
+targets_file: './targets.txt'
+users_file: './users.csv'
