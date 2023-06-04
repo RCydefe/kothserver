@@ -1,0 +1,136 @@
+.header {
+    overflow: hidden;
+    background-color: #212b38;
+    padding: 10px 10px;
+    padding-left: 15%;
+}
+.header a {
+    float: left;
+    color: #cccccc;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+.header a:hover {
+    color: #55fa37;
+}
+.header-logo {
+    float: left;
+    font-size: 55px;
+    font-family: 'Roboto', sans-serif;
+    color:#cccccc;
+}
+.project_logo {
+    float: left;
+    position: absolute;
+    padding-top: 55px;
+    padding-left: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 28px;
+    color:#a1a1a1;
+}
+.header-right {
+    float: right;
+    padding-right: 15%;
+    right: 0;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    color:#a1a1a1;
+}  
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #8b9396;
+    font-family: 'Roboto', sans-serif;
+    background-color: #212B38;
+    padding-bottom: 35px;
+}
+.registration_form {
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+.registration_form h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+}
+.registration_form p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+.registration_form label {
+    text-align: center;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    display:flex;
+    justify-content: center;
+    position: center
+}
+.registration_form .btn_submit {
+    background-color: #726eff; 
+    border: none;
+    color: #37465b;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.user_message {
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+.user_message h2 {
+    text-align: center;
+    color: #726eff
+}
+.registered_users {
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+.registered_users h1 {
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+.registered_users table {
+    display:flex;
+    justify-content: center;
+    font-size: 18px;
+    border-spacing: 15px;
+    padding: 5px;
+    border-collapse: collapse;
+}
+.registered_users td {
+    border: 1px solid #726eff;
+    border-radius: 10px;
+    border-collapse: collapse; 
+    padding: 5px;
+}
+.registered_users th {
+    border: 1px solid #37465b;
+    border-radius: 10px;
+    border-spacing: 15px;
+    padding: 10px;
+    border-collapse: collapse; 
+    text-align: left;
+}
+.registered_users tr {
+    border-radius: 10px;
+    border-collapse: collapse; 
+    padding: 5px;
+}

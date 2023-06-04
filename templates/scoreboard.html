@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Title of page --> 
-        <title>{{ ctf_name }}</title>
-
+        <title>{{ title }}</title>
         <!-- Import CSS from Flask --> 
         <link rel="stylesheet" href="{{ url_for('static', filename='scoreboard.css') }}">
-
         <!-- Create top header  --> 
         <div class="header">
+
+            <!-- LINKS!  --> 
+            <div class="header-right">
+                <a class="active" href="{{ base_url }}/">Scoreboard</a>
+                <a class="active" href="{{ base_url }}/registration">Registration</a>
+                <a class="active" href="{{ base_url }}/rules">Rules</a>
+            </div>
+    
+            <!-- Create channel name header  --> 
+            <div class="header-logo">{{ title }}</div>
+            <!-- Project logo  --> 
+            <div class="project_logo">King of the Hill</div>
+        </div>
+    </head>
+    <body>
+        <div class="claimed_targets">
+            <h1>Claimed Targets</h1>
+            <table>
+                <tr>
+                    <th>Target</th>
+                    <th>Owned By</th>
+                </tr>
+                {% for target in target_data %}
+                    {{ target | safe}}
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="user_scores">
+            <h1>Scoreboard</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Points</th>
+                </tr>
+                {% for user in user_scores_data %}
+                    {{ user | safe}}
+                {% endfor %}
+            </table>
+        </div>
+    </body>

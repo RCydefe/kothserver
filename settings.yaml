@@ -20,4 +20,3 @@ points: 10
 ##############################
 scores_file: './scores.json'
 targets_file: './targets.txt'
-users_file: './users.csv'

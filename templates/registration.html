@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <!-- Import CSS from Flask --> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='registration.css') }}">
+        <!-- Create top header  --> 
+        <div class="header">
+
+            <!-- LINKS!  --> 
+            <div class="header-right">
+                <a class="active" href="{{ base_url }}/">Scoreboard</a>
+                <a class="active" href="{{ base_url }}/registration">Registration</a>
+                <a class="active" href="{{ base_url }}/rules">Rules</a>
+            </div>
+    
+            <!-- Create channel name header  --> 
+            <div class="header-logo">{{ title }}</div>
+            <!-- Project logo  --> 
+            <div class="project_logo">King of the Hill</div>
+        </div>
+    </head>
+    <body>
+        <div class="registration_form">
+            <h2>Registration</h2>
+            <p>Please fill out your username, and once submitted find your unique token listed below.</p>
+            <form method="POST">
+                <label>Username:&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="username">&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="Submit">
+                </label>
+            </form>
+        </div>
+        <div class="user_message">
+            {% for message in get_flashed_messages() %}
+                <h2>{{ message }}</h2>
+            {% endfor %}
+        </div>
+        <div class="registered_users">
+            <h1>Registered Users</h1>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Token</th>
+                </tr>
+                {% for key, value in users.items() %}
+                    <tr>
+                        <th>{{value['username']}}</th>
+                        <th>{{key}}</th>
+                    </tr>    
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+
+

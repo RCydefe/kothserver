@@ -1,0 +1,53 @@
+.header {
+    overflow: hidden;
+    background-color: #212b38;
+    padding: 10px 10px;
+    padding-left: 15%;
+}
+.header a {
+    float: left;
+    color: #cccccc;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+.header a:hover {
+    color: #55fa37;
+}
+.header-logo {
+    float: left;
+    font-size: 55px;
+    font-family: 'Roboto', sans-serif;
+    color:#cccccc;
+}
+.project_logo {
+    float: left;
+    position: absolute;
+    padding-top: 55px;
+    padding-left: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 28px;
+    color:#a1a1a1;
+}
+.header-right {
+    float: right;
+    padding-right: 15%;
+    right: 0;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    color:#a1a1a1;
+}  
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: #8b9396;
+    background-color: #212B38;
+    padding-bottom: 35px;
+}
