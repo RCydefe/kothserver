@@ -10,8 +10,8 @@ This is a king of the hill capture the flag server, that allows users to compete
 ## Running via Python
 1. Update `settings.yaml` file
 - Server Settings
-    - `port` - This option will be the port that you access the server on. You can adjust this to the port number you would like to host the server on. By default it is set to `8080`. 
-    -`app_secret` - This is essentially a simple way to allow the server to post messages back to the user in a simple way. Feel free to adjust this as needed.
+    - `port` - This option will be the port that you access the server on. You can adjust this to the port number you would like to host the server on. By default it is set to `8080`
+    - `app_secret` - This is essentially a simple way to allow the server to post messages back to the user in a simple way. Feel free to adjust this as needed.
             - If you would like to read more about it you can read the documentation from Flask located [here](https://flask.palletsprojects.com/en/2.3.x/patterns/flashing/).
 - CTF Settings
     - `ctf_name` - Allows you to set both the title of the page, as well as the header of the page so you can rep your logo/name easily. 
