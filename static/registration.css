@@ -88,7 +88,7 @@ body {
 }
 .user_message {
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 0px;
     padding-bottom: 30px;
     width: 100%;
 }
@@ -98,7 +98,7 @@ body {
 }
 .registered_users {
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 0px;
     padding-bottom: 30px;
     width: 100%;
 }

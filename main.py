@@ -1,19 +1,16 @@
 import logging
 import yaml
-import csv
 import json
 import threading
 import requests
 import random
 import re
-import pandas as pd
 from os.path import exists
 from time import sleep
-from flask import Flask, render_template, flash, redirect, url_for, request
+from flask import Flask, render_template, flash, request
 
 # Setup Flask
 app = Flask(__name__)
-app.secret_key = "secret key"
 
 # For logging purposes
 logger = logging.getLogger("scoreboard")
@@ -134,13 +131,13 @@ def query_for_tokens(token_timer):
 
 def score_users(score_timer, points):
     while True:
-        try:
-            for target, token in targets.items():
+        for target, token in targets.items():
+            try:
                 user_information[token]['score'] += points  
                 user = user_information[token]['username']
                 logger.info(f'User {user} scored {points} points!')
-        except Exception as e:
-            logger.debug(f'Box has been claimed yet {target}: {e}')
+            except Exception as e:
+                logger.debug(f'Box has been claimed yet {target}: {e}')
         sleep(score_timer)
 
 def rand_token():
@@ -159,7 +156,7 @@ def register_user(username):
             logger.error(f'User has already been registered: {username}')
             return True
         else:
-            user_information[token] = {'username': username, 'total_boxes': 0, 'hosts': [], 'score': 0}
+            user_information[token] = {'username': username, 'score': 0}
             logger.info(f'Successfully registered user: {username}')
             try:
                 logger.info(f'Saving scores file: {score_file}')
@@ -173,17 +170,6 @@ def register_user(username):
     except Exception as e:
         logger.error(f'Unable to register user - {username} - Reason: {e}')
         return True
-
-def grab_information():
-    tgts_list = []
-    for target, token in targets.items():
-        if token != '':
-            user = user_information[token]['username']
-            target_info = target + '-' + user
-        else:
-            user = 'Not yet claimed'
-            target_info = target + '-' + user
-        return tgts_list.append(target_info)
 
 # Website Routing Magic
 @app.route("/", methods=['GET'])
@@ -207,17 +193,6 @@ def index():
         score = user_information[token]['score']
         user_scores_data.append(f'<tr><td>{username}</td><td>{score}</td></tr>')
     return render_template('scoreboard.html', title=title, target_data=target_data, user_scores_data=user_scores_data)
-
-def score_users(score_timer, points):
-    while True:
-        try:
-            for target, token in targets.items():
-                user_information[token]['score'] += points  
-                user = user_information[token]['username']
-                logger.info(f'User {user} scored {points} points!')
-        except Exception as e:
-            logger.debug(f'Box has been claimed yet {target}: {e}')
-        sleep(score_timer)
 
 @app.route("/registration", methods=['GET', 'POST'])
 def registration_page():
@@ -256,5 +231,6 @@ if __name__ == '__main__':
     # Background scoring function
     score_users_th = threading.Thread(target=score_users, args=(conf['score_timer'], conf['points'],))
     score_users_th.start()
-    
-    app.run(host='127.0.0.1', port=8080)
+
+    app.secret_key = conf['app_secret']
+    app.run(host='0.0.0.0', port=conf['port'])
