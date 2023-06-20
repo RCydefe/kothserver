@@ -1,4 +1,10 @@
-# King of the Hill Capture The Flag Scoreboard
+<p align="center">
+<img src="https://cdn.discordapp.com/attachments/733892335766601810/1120533875987333180/heathenhkr_a_minimalist_cyber_castle_symbol_6b0db3dd-7ae0-4fa1-8179-e92515b62b2f.png" width=50% height=50%>
+</p>
+
+<p align="center">  
+<h1>King of the Hill Capture The Flag Scoreboard</h1>
+</p>
 
 ## About
 This is a king of the hill capture the flag server, that allows users to compete to see who can hold onto a host for the longest.
