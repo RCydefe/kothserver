@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/733892335766601810/1120533875987333180/heathenhkr_a_minimalist_cyber_castle_symbol_6b0db3dd-7ae0-4fa1-8179-e92515b62b2f.png" width=50% height=50%>
+<img src="./OTHER/logo.png" width=50% height=50%>
 </p>
 
 <p align="center">  
