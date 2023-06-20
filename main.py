@@ -111,7 +111,7 @@ def query_for_tokens(token_timer):
         logger.info(f'Grabbing tokens from targets.')
         for target in targets.keys():
             try:
-                if 'http://' in target:
+                if 'http://' or 'https://' in target:
                     response = requests.get(target)
                 else:
                     response = requests.get('http://' + target)
@@ -141,7 +141,7 @@ def score_users(score_timer, points):
                 user = user_information[token]['username']
                 logger.info(f'User {user} scored {points} points!')
             except Exception as e:
-                logger.debug(f'Box has been claimed yet {target}: {e}')
+                logger.debug(f'Box has not been claimed yet {target}: {e}')
         sleep(score_timer)
 
 def rand_token():
