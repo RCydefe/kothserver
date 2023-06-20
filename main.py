@@ -125,6 +125,7 @@ def query_for_tokens(token_timer):
                     targets[target] = ''
             except Exception as e:
                 logger.error(f'Unable to get token information from "{target}" - is it alive?...')
+                targets[target] = ''
         logger.info(f'Successfully grabbed tokens, will check again in {token_timer} seconds.')
         logger.info(targets)
         sleep(token_timer)
