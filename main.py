@@ -111,7 +111,10 @@ def query_for_tokens(token_timer):
         logger.info(f'Grabbing tokens from targets.')
         for target in targets.keys():
             try:
-                response = requests.get('http://' + target)
+                if 'http://' in target:
+                    response = requests.get(target)
+                else:
+                    response = requests.get('http://' + target)
                 tokens_found = re.search(r'[tT][oO][kK][eE][nN]:\s*(\d{10})', response.text)
                 if tokens_found:
                     token = tokens_found.group(1)
